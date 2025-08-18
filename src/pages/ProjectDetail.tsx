@@ -173,27 +173,20 @@ const ProjectDetail = () => {
       </section>
 
       {/* Image Gallery */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <h2 className="text-4xl font-serif font-light mb-12 text-center text-gradient">
-              Project Gallery
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {project.images.map((image, index) => (
-              <ScrollReveal key={index} delay={index * 100}>
-                <div className="group cursor-pointer">
-                  <img
-                    src={image}
-                    alt={`${project.title} - Image ${index + 1}`}
-                    className="w-full h-80 object-cover rounded-xl transition-transform duration-300 group-hover:scale-105 shadow-card hover:shadow-medium"
-                  />
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+      <section className="py-0">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
+          {project.images.map((image, index) => (
+            <ScrollReveal key={index} delay={index * 100}>
+              <div className="group cursor-pointer relative">
+                <img
+                  src={image}
+                  alt={`${project.title} - Image ${index + 1}`}
+                  className="w-full h-80 lg:h-96 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
@@ -202,18 +195,14 @@ const ProjectDetail = () => {
         <div className="container mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-4xl font-serif font-light mb-6 text-gradient">
-              Inspired by This Project?
+              Start Your Project
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's create something beautiful together. Every space has the potential 
-              to become extraordinary.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="btn-primary">
-                Start Your Project
+                Contact Us
               </Link>
               <Link to="/projects" className="btn-secondary">
-                View More Projects
+                More Projects
               </Link>
             </div>
           </ScrollReveal>

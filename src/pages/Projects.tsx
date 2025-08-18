@@ -38,17 +38,13 @@ const Projects = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-hero">
+      <section className="py-16 bg-gradient-hero">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl md:text-6xl font-serif font-light mb-6 text-gradient">
-                Our Projects
+                Projects
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                A curated collection of our most cherished interior design projects, 
-                each telling a unique story of transformation and beauty.
-              </p>
             </div>
           </ScrollReveal>
         </div>
@@ -73,64 +69,46 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <ScrollReveal key={project.id} delay={index * 200}>
-                <Link to={`/projects/${project.id}`} className="group cursor-pointer">
-                  <div className="relative overflow-hidden rounded-xl mb-6">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium">{project.year}</span>
-                        <ExternalLink className="w-5 h-5" />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-primary font-medium">{project.category}</span>
-                      <span className="text-sm text-muted-foreground">{project.year}</span>
-                    </div>
-                    <h3 className="text-xl font-serif font-medium text-foreground group-hover:text-primary transition-colors">
+      <section className="py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
+          {projects.map((project, index) => (
+            <ScrollReveal key={project.id} delay={index * 200}>
+              <Link to={`/projects/${project.id}`} className="group cursor-pointer block relative">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
+                  <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
+                    <span className="text-white/80 text-sm mb-2">{project.category}</span>
+                    <h3 className="text-white text-xl font-serif font-light mb-2">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {project.description}
-                    </p>
+                    <ExternalLink className="w-5 h-5 text-white/80" />
                   </div>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
+                </div>
+              </Link>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-subtle">
+      <section className="py-16 bg-gradient-subtle">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto">
+            <div className="text-center">
               <h2 className="text-4xl font-serif font-light mb-6 text-gradient">
-                Ready to Create Your Dream Space?
+                Create Your Dream Space
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Every project is a new opportunity to create something beautiful and meaningful. 
-                Let's discuss how we can transform your space into something extraordinary.
-              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="btn-primary">
-                  Start Your Project
+                  Start Project
                 </button>
                 <button className="btn-secondary">
-                  View More Work
+                  View More
                 </button>
               </div>
             </div>

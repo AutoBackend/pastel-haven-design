@@ -30,32 +30,32 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero" />
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
+        <div className="absolute inset-0 bg-black/40" />
         
         <div className="relative z-10 text-center max-w-4xl px-6">
           <ScrollReveal>
-            <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 text-gradient">
+            <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 text-white">
               Serene Spaces
             </h1>
           </ScrollReveal>
           
           <ScrollReveal delay={200}>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-light leading-relaxed">
-              Creating beautiful, harmonious interiors that inspire tranquility and joy
+            <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
+              Beautiful interiors
             </p>
           </ScrollReveal>
           
           <ScrollReveal delay={400}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/projects" className="btn-primary inline-flex items-center gap-2">
-                View Our Work <ArrowRight className="w-4 h-4" />
+                View Work <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/contact" className="btn-secondary">
-                Start Your Project
+                Contact
               </Link>
             </div>
           </ScrollReveal>
@@ -63,20 +63,8 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-cream">
+      <section className="py-16 bg-cream">
         <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-gradient">
-                Our Approach
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                We believe in creating spaces that are not just beautiful, but deeply personal 
-                and functionally perfect for your lifestyle.
-              </p>
-            </div>
-          </ScrollReveal>
-
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <ScrollReveal key={index} delay={index * 200}>
@@ -87,7 +75,7 @@ const Home = () => {
                   <h3 className="text-xl font-serif font-medium mb-3 text-foreground">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground">
                     {feature.description}
                   </p>
                 </div>
@@ -98,102 +86,40 @@ const Home = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-gradient">
-                Recent Work
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                A glimpse into our latest projects and transformations.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { image: gallery1, title: 'Living Room Design' },
-              { image: gallery2, title: 'Kitchen Renovation' },
-              { image: gallery3, title: 'Reading Nook' },
-              { image: gallery4, title: 'Bathroom Design' }
-            ].map((item, index) => (
-              <ScrollReveal key={index} delay={index * 100}>
-                <div className="group cursor-pointer">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <h3 className="font-medium">{item.title}</h3>
-                    </div>
-                  </div>
+      <section className="py-0">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
+          {[
+            { image: gallery1, title: 'Living Room' },
+            { image: gallery2, title: 'Kitchen' },
+            { image: gallery3, title: 'Reading Nook' },
+            { image: gallery4, title: 'Bathroom' }
+          ].map((item, index) => (
+            <ScrollReveal key={index} delay={index * 100}>
+              <div className="group cursor-pointer relative">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <h3 className="text-white text-xl font-serif font-light">{item.title}</h3>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24 bg-cream">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-gradient">
-                What Our Clients Say
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sarah Johnson",
-                text: "Serene Spaces transformed our home into a peaceful sanctuary. Every detail was thoughtfully considered.",
-                rating: 5
-              },
-              {
-                name: "Michael Chen",
-                text: "Professional, creative, and truly understanding of our vision. The results exceeded our expectations.",
-                rating: 5
-              },
-              {
-                name: "Emily Rodriguez",
-                text: "Beautiful work that perfectly captures our style. We couldn't be happier with our new space.",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <ScrollReveal key={index} delay={index * 200}>
-                <div className="card-soft text-center">
-                  <div className="flex justify-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-primary fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4 leading-relaxed italic">
-                    "{testimonial.text}"
-                  </p>
-                  <h4 className="font-medium text-foreground">{testimonial.name}</h4>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-24">
+      <section className="py-16 bg-cream">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: "150+", label: "Projects Completed" },
-              { number: "8", label: "Years Experience" },
-              { number: "98%", label: "Client Satisfaction" },
-              { number: "24/7", label: "Support Available" }
+              { number: "150+", label: "Projects" },
+              { number: "8", label: "Years" },
+              { number: "98%", label: "Satisfaction" },
+              { number: "24/7", label: "Support" }
             ].map((stat, index) => (
               <ScrollReveal key={index} delay={index * 100}>
                 <div>
@@ -209,17 +135,14 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-subtle">
+      <section className="py-16 bg-gradient-subtle">
         <div className="container mx-auto px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-gradient">
-              Ready to Transform Your Space?
+            <h2 className="text-4xl font-serif font-light mb-6 text-gradient">
+              Transform Your Space
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's create your dream interior together.
-            </p>
             <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
-              Get Started Today <ArrowRight className="w-4 h-4" />
+              Start Project <ArrowRight className="w-4 h-4" />
             </Link>
           </ScrollReveal>
         </div>
