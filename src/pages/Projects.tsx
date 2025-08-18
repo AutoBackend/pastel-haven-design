@@ -1,5 +1,6 @@
 import ScrollReveal from '@/components/ScrollReveal';
 import { ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import project1 from '@/assets/project-1.jpg';
 import project2 from '@/assets/project-2.jpg';
 import project3 from '@/assets/project-3.jpg';
@@ -77,7 +78,7 @@ const Projects = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <ScrollReveal key={project.id} delay={index * 200}>
-                <div className="group cursor-pointer">
+                <Link to={`/projects/${project.id}`} className="group cursor-pointer">
                   <div className="relative overflow-hidden rounded-xl mb-6">
                     <img
                       src={project.image}
@@ -105,7 +106,7 @@ const Projects = () => {
                       {project.description}
                     </p>
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>

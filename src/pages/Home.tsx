@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Palette, Home as HomeIcon, Heart } from 'lucide-react';
+import { ArrowRight, Palette, Home as HomeIcon, Heart, Star, Users } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-interior.jpg';
+import gallery1 from '@/assets/gallery-1.jpg';
+import gallery2 from '@/assets/gallery-2.jpg';
+import gallery3 from '@/assets/gallery-3.jpg';
+import gallery4 from '@/assets/gallery-4.jpg';
 
 const Home = () => {
   const features = [
@@ -93,6 +97,117 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-gradient">
+                Recent Work
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                A glimpse into our latest projects and transformations.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { image: gallery1, title: 'Living Room Design' },
+              { image: gallery2, title: 'Kitchen Renovation' },
+              { image: gallery3, title: 'Reading Nook' },
+              { image: gallery4, title: 'Bathroom Design' }
+            ].map((item, index) => (
+              <ScrollReveal key={index} delay={index * 100}>
+                <div className="group cursor-pointer">
+                  <div className="relative overflow-hidden rounded-xl">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <h3 className="font-medium">{item.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-cream">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-gradient">
+                What Our Clients Say
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sarah Johnson",
+                text: "Serene Spaces transformed our home into a peaceful sanctuary. Every detail was thoughtfully considered.",
+                rating: 5
+              },
+              {
+                name: "Michael Chen",
+                text: "Professional, creative, and truly understanding of our vision. The results exceeded our expectations.",
+                rating: 5
+              },
+              {
+                name: "Emily Rodriguez",
+                text: "Beautiful work that perfectly captures our style. We couldn't be happier with our new space.",
+                rating: 5
+              }
+            ].map((testimonial, index) => (
+              <ScrollReveal key={index} delay={index * 200}>
+                <div className="card-soft text-center">
+                  <div className="flex justify-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-primary fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4 leading-relaxed italic">
+                    "{testimonial.text}"
+                  </p>
+                  <h4 className="font-medium text-foreground">{testimonial.name}</h4>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            {[
+              { number: "150+", label: "Projects Completed" },
+              { number: "8", label: "Years Experience" },
+              { number: "98%", label: "Client Satisfaction" },
+              { number: "24/7", label: "Support Available" }
+            ].map((stat, index) => (
+              <ScrollReveal key={index} delay={index * 100}>
+                <div>
+                  <div className="text-4xl font-serif font-light text-gradient mb-2">
+                    {stat.number}
+                  </div>
+                  <p className="text-muted-foreground">{stat.label}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-gradient-subtle">
         <div className="container mx-auto px-6 text-center">
@@ -101,8 +216,7 @@ const Home = () => {
               Ready to Transform Your Space?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's work together to create an interior that tells your story and 
-              brings your vision to life.
+              Let's create your dream interior together.
             </p>
             <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
               Get Started Today <ArrowRight className="w-4 h-4" />
