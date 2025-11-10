@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Palette, Home as HomeIcon, Heart, Star, Users } from 'lucide-react';
+import { ArrowRight, Palette, Home as HomeIcon, Heart, Sparkles, Layers, Paintbrush } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-interior.jpg';
 import gallery1 from '@/assets/gallery-1.jpg';
 import gallery2 from '@/assets/gallery-2.jpg';
 import gallery3 from '@/assets/gallery-3.jpg';
 import gallery4 from '@/assets/gallery-4.jpg';
+import luxuryLiving from '@/assets/luxury-living.jpg';
+import elegantKitchen from '@/assets/elegant-kitchen.jpg';
+import sereneBedroom from '@/assets/serene-bedroom.jpg';
+import homeOffice from '@/assets/home-office.jpg';
+import detailMaterials from '@/assets/detail-materials.jpg';
+import elegantDining from '@/assets/elegant-dining.jpg';
 
 const Home = () => {
   const features = [
@@ -85,29 +91,153 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
+      {/* Featured Spaces Section */}
       <section className="py-0">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
+        <ScrollReveal>
+          <div className="relative h-screen">
+            <img
+              src={luxuryLiving}
+              alt="Luxury Living Space"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
+              <h2 className="text-4xl md:text-6xl font-serif font-light text-white mb-4">
+                Timeless Elegance
+              </h2>
+              <p className="text-xl text-white/90 max-w-2xl">
+                Where luxury meets comfort
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid md:grid-cols-2">
+          <ScrollReveal delay={200}>
+            <div className="relative h-[70vh]">
+              <img
+                src={elegantKitchen}
+                alt="Elegant Kitchen Design"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/30 hover:bg-black/40 transition-colors duration-500" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <h3 className="text-3xl font-serif font-light text-white">Kitchen Design</h3>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={300}>
+            <div className="relative h-[70vh]">
+              <img
+                src={sereneBedroom}
+                alt="Serene Bedroom Retreat"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/30 hover:bg-black/40 transition-colors duration-500" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <h3 className="text-3xl font-serif font-light text-white">Bedroom Sanctuaries</h3>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Design Philosophy Section */}
+      <section className="relative h-screen overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${detailMaterials})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+        
+        <div className="relative z-10 h-full flex items-center">
+          <div className="container mx-auto px-6 max-w-3xl">
+            <ScrollReveal>
+              <h2 className="text-5xl md:text-7xl font-serif font-light text-white mb-8">
+                Crafted with Intention
+              </h2>
+              <p className="text-xl md:text-2xl text-white/90 font-light">
+                Every detail matters. From the texture of fabrics to the play of light, 
+                we create spaces that tell your story.
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Grid Section */}
+      <section className="py-0">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-0">
           {[
-            { image: gallery1, title: 'Living Room' },
+            { image: gallery1, title: 'Living' },
+            { image: homeOffice, title: 'Work' },
             { image: gallery2, title: 'Kitchen' },
-            { image: gallery3, title: 'Reading Nook' },
-            { image: gallery4, title: 'Bathroom' }
+            { image: gallery3, title: 'Relax' },
+            { image: elegantDining, title: 'Dining' },
+            { image: gallery4, title: 'Refresh' }
           ].map((item, index) => (
-            <ScrollReveal key={index} delay={index * 100}>
-              <div className="group cursor-pointer relative">
+            <ScrollReveal key={index} delay={index * 50}>
+              <div className="group cursor-pointer relative overflow-hidden aspect-square">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-white text-xl font-serif font-light">{item.title}</h3>
+                  <h3 className="text-white text-2xl md:text-3xl font-serif font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    {item.title}
+                  </h3>
                 </div>
               </div>
             </ScrollReveal>
           ))}
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 bg-cream">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-center mb-16 text-gradient">
+              Our Approach
+            </h2>
+          </ScrollReveal>
+          
+          <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            {[
+              {
+                icon: <Sparkles className="w-10 h-10 text-primary" />,
+                title: 'Vision',
+                description: 'Understanding your dreams and translating them into timeless designs.',
+              },
+              {
+                icon: <Layers className="w-10 h-10 text-secondary" />,
+                title: 'Craft',
+                description: 'Meticulous attention to every layer, texture, and detail of your space.',
+              },
+              {
+                icon: <Paintbrush className="w-10 h-10 text-accent" />,
+                title: 'Artistry',
+                description: 'Blending aesthetics with functionality for spaces that inspire.',
+              },
+            ].map((service, index) => (
+              <ScrollReveal key={index} delay={index * 200}>
+                <div className="text-center group">
+                  <div className="flex justify-center mb-6 transform transition-transform duration-500 group-hover:scale-110">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-serif font-medium mb-4 text-foreground">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
