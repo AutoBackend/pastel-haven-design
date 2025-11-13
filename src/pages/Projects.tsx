@@ -1,6 +1,9 @@
-import ScrollReveal from '@/components/ScrollReveal';
-import { ExternalLink } from 'lucide-react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import ScrollReveal from '@/components/ScrollReveal';
+import ParallaxSection from '@/components/ParallaxSection';
+import projectsHero from '@/assets/projects-hero.jpg';
 import project1 from '@/assets/project-1.jpg';
 import project2 from '@/assets/project-2.jpg';
 import project3 from '@/assets/project-3.jpg';
@@ -36,16 +39,25 @@ const Projects = () => {
   const categories = ['All', 'Residential', 'Workspace', 'Commercial'];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-hero">
-        <div className="container mx-auto px-6">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <ParallaxSection speed={0.5}>
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${projectsHero})` }}
+          />
+        </ParallaxSection>
+        <div className="absolute inset-0 bg-black/40" />
+        
+        <div className="relative z-10 text-center max-w-4xl px-6">
           <ScrollReveal>
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl md:text-6xl font-serif font-light mb-6 text-gradient">
-                Projects
-              </h1>
-            </div>
+            <h1 className="text-5xl md:text-7xl font-serif font-light text-white mb-6">
+              Our Work
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 font-light">
+              Stunning transformations
+            </p>
           </ScrollReveal>
         </div>
       </section>
@@ -82,11 +94,9 @@ const Projects = () => {
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
                   <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
-                    <span className="text-white/80 text-sm mb-2">{project.category}</span>
-                    <h3 className="text-white text-xl font-serif font-light mb-2">
+                    <h3 className="text-white text-2xl font-serif font-light">
                       {project.title}
                     </h3>
-                    <ExternalLink className="w-5 h-5 text-white/80" />
                   </div>
                 </div>
               </Link>

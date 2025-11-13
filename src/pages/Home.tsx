@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Palette, Home as HomeIcon, Heart, Sparkles, Layers, Paintbrush } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
+import ParallaxSection from '@/components/ParallaxSection';
+import Testimonials from '@/components/Testimonials';
+import BeforeAfter from '@/components/BeforeAfter';
 import heroImage from '@/assets/hero-interior.jpg';
+import beforeLiving from '@/assets/before-living.jpg';
+import afterLiving from '@/assets/after-living.jpg';
 import gallery1 from '@/assets/gallery-1.jpg';
 import gallery2 from '@/assets/gallery-2.jpg';
 import gallery3 from '@/assets/gallery-3.jpg';
@@ -34,13 +39,19 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section with Video Background */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
-        <div className="absolute inset-0 bg-black/40" />
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster={heroImage}
+        >
+          <source src="https://cdn.pixabay.com/video/2021/08/04/84236-579440835_large.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/50" />
         
         <div className="relative z-10 text-center max-w-4xl px-6">
           <ScrollReveal>
@@ -143,12 +154,25 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Design Philosophy Section */}
+      {/* Before/After Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <BeforeAfter 
+            beforeImage={beforeLiving}
+            afterImage={afterLiving}
+            title="Transformations That Inspire"
+          />
+        </div>
+      </section>
+
+      {/* Design Philosophy Section with Parallax */}
       <section className="relative h-screen overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${detailMaterials})` }}
-        />
+        <ParallaxSection speed={0.5}>
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${detailMaterials})` }}
+          />
+        </ParallaxSection>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
         
         <div className="relative z-10 h-full flex items-center">
@@ -240,6 +264,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Stats Section */}
       <section className="py-16 bg-cream">

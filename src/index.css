@@ -7,39 +7,39 @@
 @layer base {
   :root {
     /* Base colors - soft and minimal */
-    --background: 0 0% 98%;
-    --foreground: 220 15% 15%;
+    --background: 30 25% 97%;
+    --foreground: 220 20% 20%;
 
     /* Card styling */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 25%;
+    --card-foreground: 220 15% 30%;
 
     /* Popover styling */
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
+    --popover-foreground: 220 15% 30%;
 
-    /* Primary - Dusty Rose */
-    --primary: 345 35% 75%;
-    --primary-foreground: 0 0% 100%;
-    --primary-muted: 345 25% 85%;
+    /* Primary - Soft Blush Pink */
+    --primary: 340 45% 80%;
+    --primary-foreground: 340 60% 25%;
+    --primary-muted: 340 30% 90%;
 
-    /* Secondary - Sage Green */
-    --secondary: 120 20% 80%;
-    --secondary-foreground: 120 25% 25%;
-    --secondary-muted: 120 15% 90%;
+    /* Secondary - Pale Mint */
+    --secondary: 150 30% 85%;
+    --secondary-foreground: 150 40% 25%;
+    --secondary-muted: 150 20% 93%;
 
-    /* Accent - Soft Lavender */
-    --accent: 270 25% 85%;
-    --accent-foreground: 270 30% 25%;
-    --accent-muted: 270 15% 95%;
+    /* Accent - Light Periwinkle */
+    --accent: 220 40% 85%;
+    --accent-foreground: 220 50% 25%;
+    --accent-muted: 220 25% 93%;
 
     /* Warm Cream */
-    --cream: 45 30% 95%;
-    --cream-foreground: 45 20% 30%;
+    --cream: 35 40% 94%;
+    --cream-foreground: 35 30% 25%;
 
     /* Muted tones */
-    --muted: 220 10% 95%;
-    --muted-foreground: 220 15% 55%;
+    --muted: 30 15% 93%;
+    --muted-foreground: 220 20% 45%;
 
     /* Utility colors */
     --destructive: 0 65% 70%;
