@@ -58,12 +58,12 @@ const Contact = () => {
         </ParallaxSection>
         <div className="absolute inset-0 bg-black/40" />
         
-        <div className="relative z-10 text-center max-w-4xl px-6">
+        <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
           <ScrollReveal>
-            <h1 className="text-5xl md:text-7xl font-serif font-light text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-light text-white mb-4 sm:mb-6">
               Let's Connect
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-light">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-light">
               Start your transformation today
             </p>
           </ScrollReveal>
@@ -71,30 +71,30 @@ const Contact = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-cream">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+      <section className="py-12 sm:py-24 bg-cream">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 max-w-6xl mx-auto">
             {/* Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {contactInfo.map((info, index) => (
                 <ScrollReveal key={index} delay={index * 150}>
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-14 h-14 bg-background rounded-lg flex items-center justify-center shadow-soft">
+                    <div className="flex-shrink-0 w-12 sm:w-14 h-12 sm:h-14 bg-background rounded-lg flex items-center justify-center shadow-soft">
                       {info.icon}
                     </div>
                     <div>
-                      <h3 className="font-serif font-medium text-lg text-foreground mb-1">
+                      <h3 className="font-serif font-medium text-base sm:text-lg text-foreground mb-1">
                         {info.title}
                       </h3>
                       {info.link ? (
                         <a
                           href={info.link}
-                          className="text-muted-foreground hover:text-primary transition-colors text-lg"
+                          className="text-sm sm:text-lg text-muted-foreground hover:text-primary transition-colors break-all"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-muted-foreground text-lg">{info.value}</p>
+                        <p className="text-sm sm:text-lg text-muted-foreground">{info.value}</p>
                       )}
                     </div>
                   </div>
