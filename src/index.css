@@ -137,13 +137,13 @@
   .btn-primary {
     @apply bg-gradient-to-r from-primary to-primary-muted text-primary-foreground 
            hover:shadow-soft transition-all duration-300 
-           rounded-full px-8 py-3 font-medium;
+           rounded-full px-6 sm:px-8 py-2.5 sm:py-3 font-medium;
   }
 
   .btn-secondary {
     @apply border border-secondary text-secondary-foreground 
            hover:bg-secondary hover:shadow-soft transition-all duration-300 
-           rounded-full px-8 py-3 font-medium;
+           rounded-full px-6 sm:px-8 py-2.5 sm:py-3 font-medium;
   }
 
   .card-soft {

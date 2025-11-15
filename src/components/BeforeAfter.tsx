@@ -24,14 +24,14 @@ const BeforeAfter = ({ beforeImage, afterImage, title }: BeforeAfterProps) => {
 
   return (
     <ScrollReveal>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto px-4 sm:px-0">
         {title && (
-          <h3 className="text-3xl font-serif font-light text-center mb-8 text-gradient">
+          <h3 className="text-2xl sm:text-3xl font-serif font-light text-center mb-6 sm:mb-8 text-gradient">
             {title}
           </h3>
         )}
         <div
-          className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl shadow-card cursor-col-resize select-none"
+          className="relative w-full aspect-[16/9] overflow-hidden rounded-xl sm:rounded-2xl shadow-card cursor-col-resize select-none touch-none"
           onMouseMove={handleMove}
           onTouchMove={handleMove}
           onMouseDown={() => setIsDragging(true)}
@@ -62,25 +62,28 @@ const BeforeAfter = ({ beforeImage, afterImage, title }: BeforeAfterProps) => {
           
           {/* Slider */}
           <div
-            className="absolute top-0 bottom-0 w-1 bg-white shadow-lg"
+            className="absolute top-0 bottom-0 w-0.5 sm:w-1 bg-white shadow-lg"
             style={{ left: `${sliderPosition}%` }}
           >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-xl flex items-center justify-center">
               <div className="flex gap-1">
-                <div className="w-0.5 h-6 bg-primary"></div>
-                <div className="w-0.5 h-6 bg-primary"></div>
+                <div className="w-0.5 h-4 sm:h-6 bg-primary"></div>
+                <div className="w-0.5 h-4 sm:h-6 bg-primary"></div>
               </div>
             </div>
           </div>
           
           {/* Labels */}
-          <div className="absolute top-4 left-4 bg-black/50 text-white px-4 py-2 rounded-lg text-sm font-medium backdrop-blur-sm">
+          <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-black/50 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium backdrop-blur-sm">
             Before
           </div>
-          <div className="absolute top-4 right-4 bg-black/50 text-white px-4 py-2 rounded-lg text-sm font-medium backdrop-blur-sm">
+          <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-black/50 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium backdrop-blur-sm">
             After
           </div>
         </div>
+        <p className="text-center text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4">
+          Drag to compare
+        </p>
       </div>
     </ScrollReveal>
   );
