@@ -42,12 +42,12 @@ const About = () => {
         </ParallaxSection>
         <div className="absolute inset-0 bg-black/40" />
         
-        <div className="relative z-10 text-center max-w-4xl px-6">
+        <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
           <ScrollReveal>
-            <h1 className="text-5xl md:text-7xl font-serif font-light text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-light text-white mb-4 sm:mb-6">
               Our Story
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-light">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-light">
               Creating beautiful spaces for over a decade
             </p>
           </ScrollReveal>
@@ -56,17 +56,17 @@ const About = () => {
 
       {/* Image Gallery Section */}
       <section className="py-0">
-        <div className="grid md:grid-cols-2">
+        <div className="grid sm:grid-cols-2">
           <ScrollReveal>
-            <div className="relative h-[70vh]">
+            <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh]">
               <img
                 src={luxuryLiving}
                 alt="Luxury Design"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <h3 className="text-3xl font-serif font-light text-white mb-2">
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <h3 className="text-2xl sm:text-3xl font-serif font-light text-white mb-2">
                   Timeless Design
                 </h3>
               </div>
@@ -74,15 +74,15 @@ const About = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <div className="relative h-[70vh]">
+            <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh]">
               <img
                 src={elegantKitchen}
                 alt="Elegant Spaces"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <h3 className="text-3xl font-serif font-light text-white mb-2">
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <h3 className="text-2xl sm:text-3xl font-serif font-light text-white mb-2">
                   Thoughtful Details
                 </h3>
               </div>

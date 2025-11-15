@@ -35,29 +35,29 @@ const testimonials: Testimonial[] = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-gradient-subtle">
-      <div className="container mx-auto px-6">
+    <section className="py-12 sm:py-24 bg-gradient-subtle">
+      <div className="container mx-auto px-4 sm:px-6">
         <ScrollReveal>
-          <h2 className="text-4xl md:text-5xl font-serif font-light text-center mb-16 text-gradient">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-center mb-8 sm:mb-16 text-gradient">
             Client Stories
           </h2>
         </ScrollReveal>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <ScrollReveal key={index} delay={index * 200}>
-              <div className="card-soft bg-card p-8 text-center hover:scale-105 transition-transform duration-300">
-                <div className="flex justify-center gap-1 mb-4">
+              <div className="card-soft bg-card p-6 sm:p-8 text-center hover:scale-105 transition-transform duration-300">
+                <div className="flex justify-center gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    <Star key={i} className="w-4 sm:w-5 h-4 sm:h-5 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-6 italic leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 italic leading-relaxed">
                   "{testimonial.content}"
                 </p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-medium text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                <div className="border-t border-border pt-3 sm:pt-4">
+                  <p className="text-sm sm:text-base font-medium text-foreground">{testimonial.name}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
               </div>
             </ScrollReveal>

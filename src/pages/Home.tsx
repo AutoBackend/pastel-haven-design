@@ -53,23 +53,25 @@ const Home = () => {
         </video>
         <div className="absolute inset-0 bg-black/50" />
         
-        <div className="relative z-10 text-center max-w-4xl px-6">
+        <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
           <ScrollReveal>
-            <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-light mb-4 sm:mb-6 text-white">
               Serene Spaces
             </h1>
           </ScrollReveal>
           
           <ScrollReveal delay={200}>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 font-light">
               Beautiful interiors
             </p>
           </ScrollReveal>
           
           <ScrollReveal delay={400}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/projects" className="btn-primary inline-flex items-center gap-2">
-                View Work <ArrowRight className="w-4 h-4" />
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+              <Link to="/projects" className="w-full sm:w-auto">
+                <button className="btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2">
+                  View Work <ArrowRight className="w-4 h-4" />
+                </button>
               </Link>
               <Link to="/contact" className=" btn-secondary bg-black/30 text-white hover:bg-black/10">
                 Contact
@@ -80,19 +82,19 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-cream">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="py-12 sm:py-16 bg-cream">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {features.map((feature, index) => (
               <ScrollReveal key={index} delay={index * 200}>
                 <div className="card-soft text-center group hover:scale-105 transition-transform duration-300">
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-center mb-3 sm:mb-4">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-serif font-medium mb-3 text-foreground">
+                  <h3 className="text-lg sm:text-xl font-serif font-medium mb-2 sm:mb-3 text-foreground">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm sm:text-base text-muted-foreground">
                     {feature.description}
                   </p>
                 </div>
