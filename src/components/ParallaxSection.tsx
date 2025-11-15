@@ -32,9 +32,13 @@ const ParallaxSection = ({ children, speed = 0.5, className = '' }: ParallaxSect
   }, [speed]);
 
   return (
-    <div ref={sectionRef} className={`will-change-transform ${className}`}>
+    // <div ref={sectionRef} className={`will-change-transform relative ${className}`}>
+      // <div className='absolute inset-0 bg-cover bg-center'>
+      <>
       {children}
-    </div>
+      </>
+      // </div>
+    // </div>
   );
 };
 

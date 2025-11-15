@@ -71,7 +71,7 @@ const Home = () => {
               <Link to="/projects" className="btn-primary inline-flex items-center gap-2">
                 View Work <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/contact" className="btn-secondary">
+              <Link to="/contact" className=" btn-secondary bg-black/30 text-white hover:bg-black/10">
                 Contact
               </Link>
             </div>
@@ -111,7 +111,7 @@ const Home = () => {
               alt="Luxury Living Space"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
               <h2 className="text-4xl md:text-6xl font-serif font-light text-white mb-4">
                 Timeless Elegance
@@ -210,7 +210,7 @@ const Home = () => {
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-white text-2xl md:text-3xl font-serif font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 className="text-white text-2xl md:text-3xl font-serif font-light md:opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     {item.title}
                   </h3>
                 </div>
@@ -280,10 +280,10 @@ const Home = () => {
             ].map((stat, index) => (
               <ScrollReveal key={index} delay={index * 100}>
                 <div>
-                  <div className="text-4xl font-serif font-light text-gradient mb-2">
+                  <div className="text-6xl font-serif font-light text-gradient pb-2 mb-2">
                     {stat.number}
                   </div>
-                  <p className="text-muted-foreground">{stat.label}</p>
+                  <p className="text-muted-foreground text-xl">{stat.label}</p>
                 </div>
               </ScrollReveal>
             ))}
