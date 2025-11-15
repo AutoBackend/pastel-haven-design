@@ -5,6 +5,7 @@ import aboutHero from '@/assets/about-hero.jpg';
 import luxuryLiving from '@/assets/luxury-living.jpg';
 import elegantKitchen from '@/assets/elegant-kitchen.jpg';
 import homeOffice from '@/assets/home-office.jpg';
+import KnowMore from '@/assets/know-more.png';
 
 const About = () => {
   const values = [
@@ -33,8 +34,11 @@ const About = () => {
         <ParallaxSection speed={0.5}>
           <div 
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${aboutHero})` }}
+            style={{ backgroundImage: `url('${aboutHero}')` }}
           />
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-cover bg-center">
+            <img src={KnowMore} alt="About Hero" className="w-32 h-32 object-cover" />
+          </div>
         </ParallaxSection>
         <div className="absolute inset-0 bg-black/40" />
         

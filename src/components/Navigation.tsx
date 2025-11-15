@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,8 +31,8 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-xl sm:text-2xl font-serif font-bold text-gradient">
-            Serene Spaces
+          <Link to="/" className="text-2xl font-serif font-bold text-gradient">
+            <img src={logo} alt="Logo" className="w-16 h-16" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -40,7 +41,7 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                className={`nav-link ${location.pathname === item.path ? 'active' : ''} ${scrolled ? 'text-foreground' : 'text-white hover:text-gray-300'}`}
               >
                 {item.label}
               </Link>
